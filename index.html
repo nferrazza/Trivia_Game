@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head metacharset="utf-8">
+    <title>Totally Trivia!</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+</head>
+<body>
+<container id="homescreen">
+    <h1>Totally Trivia!<br><br>
+        <p>Instructions</p>
+        <p>Answer the questions before the time runs out! Only choose one answer per question...Good luck!</p><br>
+        <div id="button">START</div>
+    </h1>
+</container>
+
+
+    <container id="results">
+    <header class="header"> </header>
+    <div id="correct"></div>
+    <div id="incorrect"></div>
+    </container>
+
+    <container id="game">
+    <div class="question" id="q1">
+        <h3>Question 1</h3>
+        <div id="q">What's up?</div>
+        <form>
+            <input type="radio" class="answers" name="question0" value= "A" >Ahhh! (runs away)<br>
+            <input type="radio" class="answers" name="question0" value= "B" >Nothin' much, what's up with you?<br>
+            <input type="radio" class="answers" name="question0" value= "C" >Good, you?<br>
+            <input type="radio" class="answers" name="question0" value= "D" >What's up? What's down? What's anything??<br>
+        </form>
+    </div><br>
+
+    <div class="question" id="q2">
+            <h3>Question 2</h3>
+            <div id="q">Would you like to hang out later?</div>
+            <form>
+                <input type="radio" class="answers" name="question1" value= "A" >Arrrhgjhkehvjk! (runs away)<br>
+                <input type="radio" class="answers" name="question1" value= "B" >Uhh..nope..<br>
+                <input type="radio" class="answers" name="question1" value= "C" >Sure do, where would you like to go?<br>
+                <input type="radio" class="answers" name="question1" value= "D" >I refuse to be linen on a clothesline...be gone!<br>
+            </form>
+        </div><br>
+
+        <div class="question" id="q3">
+                <h3>Question 3</h3>
+                <div id="q">Does it go?</div>
+                <form>
+                    <input type="radio" class="answers" name="question2" value="A">Nah.<br>
+                    <input type="radio" class="answers" name="question2" value="B">It goes.<br>
+                    <input type="radio" class="answers" name="question2" value="C">(runs away)<br>
+                    <input type="radio" class="answers" name="question2" value="D">Everything goes at some point.<br>
+                </form>
+            </div><br>
+
+            <div class="question" id="q4">
+                    <h3>Question 4</h3>
+                    <div id="q">How do you like this quiz so far?</div>
+                    <form>
+                        <input type="radio" class="answers" name="question3" value="A">Thanks, you too!<br>
+                        <input type="radio" class="answers" name="question3" value="B">It's a little strange.<br>
+                        <input type="radio" class="answers" name="question3" value="C">What's up with running away as an answer?<br>
+                        <input type="radio" class="answers" name="question3" value="D">AHHHHH! (runs away)<br>
+                    </form>
+                </div><br>
+
+                <div class="question" id="q4">
+                        <h3>Question 5</h3>
+                        <div id="q">Do you think you're doing well on this quiz?</div>
+                        <form>
+                            <input type="radio" class="answers" name="queestion4" value="A">Approximately fourteen.<br>
+                            <input type="radio" class="answers" name="queestion4" value="B">GREAT- (runs away)<br>
+                            <input type="radio" class="answers" name="queestion4" value="C">This is a quiz?<br>
+                            <input type="radio" class="answers" name="queestion4" value="D">Yeah, these questions are pretty easy.<br>
+                        </form>
+                    </div><br>
+                      
+    <button type="button" id="submit" >Submit</button>
+    
+</container>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+var answers = ["A", "A", "C", "D", "B"];
+var totalAnswers = answers.length;
+var number = 10;
+var score = 0;
+var incorrect = 5;
+var intervalId;
+
+$(document).ready(function() {
+    $("#game").hide();
+    $(".header").hide();
+    $("#correct").hide();
+    $("#incorrect").hide();
+    
+});
+
+
+function run() {
+      intervalId = setInterval(decrement, 1000);
+      $("#game").show();
+      $(".header").show();
+      $("#homescreen").hide();
+
+    }
+    
+
+function decrement() {
+    number--;
+    $(".header").html("<h2>" + number + "</h2>");
+
+    if (number === 0){
+        stop();
+        $(".header").html("<h2> Time's Up! </h2>");
+        $("#correct").html("<h2> Correct: " + score + " </h2>");
+        $("#incorrect").html("<h2> Incorrect: " + incorrect + " </h2>");
+        
+
+
+    }
+}
+
+function stop() {
+    clearInterval(intervalId);
+    $("#game").hide();
+    $("#correct").show();
+    $("#incorrect").show();
+}
+
+function random() {
+    $(".header").replaceWith("<h2> All done? Let's see how you did! </h2>")
+    $("#game").hide();
+    $("#correct").show();
+    $("#incorrect").show();
+    
+    
+    
+
+}
+
+function submit(){
+    $("#submit").on("click", random);
+    
+}
+
+function startButton(){
+    $("#button").on("click", run);
+}
+
+startButton();
+submit();
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
