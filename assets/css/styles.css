@@ -1,0 +1,51 @@
+body {
+    background-image: url("https://timedotcom.files.wordpress.com/2016/07/south-park-4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+}
+
+
+
+
+.jumbotron {
+    background: rgba(54, 185, 200, 0.5); 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 2%;
+    
+    
+}
+
+.btn-info {
+    color: white;
+    width: 50%;
+}
+
+.btn-success, .card-header {
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgba(54, 185, 200);
+}
+
+.card-header {
+    font-size: 25px;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: rgb(241, 85, 85);
+}
+
+p:hover {
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+#restart {
+    margin-left: 0%;
+}
+
