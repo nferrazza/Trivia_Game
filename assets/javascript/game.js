@@ -179,7 +179,7 @@ function correctAnswerPage() {
 
 function wrongAnswerPage() {
     $("#questions").html("<p class='card-header'>Wrong!</p>");
-    $("#results").html("<img src='assets/images/wrong.gif'>");
+    $("#results").html("<img src='assets/images/wrong.gif' width=75% >");
     $("#choice1, #choice2, #choice3, #choice4").empty();
     incorrect++;
     nextQuestion();
@@ -188,7 +188,7 @@ function wrongAnswerPage() {
 function noAnswerScreen() {
     console.log("times up" + correct);
     $("#questions").html("<p class='card-header'>Where'd ya go dude?</p>");
-    $("#results").html("<img src='assets/images/facepalm.gif'>");
+    $("#results").html("<img src='assets/images/facepalm.gif' width=75% >");
     $("#choice1, #choice2, #choice3, #choice4").empty();
     incorrect++;
     nextQuestion();
